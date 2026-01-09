@@ -1,13 +1,16 @@
 #!/bin/bash
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-TOOLS="$SCRIPT_DIR/tools.json"
-ASCIIDUCK_FILE="$SCRIPT_DIR/duck-letter.txt"
+TOOLS="$(dirname "$0")/tools.json" 
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)" 
+ASCIIDUCK=$(<"$SCRIPT_DIR/duck-letter.txt")
+if ! jq --version >/dev/null 2>&1; then
+    echo "You need jq to use this tool. Please install jq first."
+    exit 1
+fi
 
 if [[ -z "$1" ]]; then
   echo "$ASCIIDUCK"
   echo ""
   echo ""
-  echo "You need jq to use this tool. Please install jq first."
   echo "Use --list to list all tools aviable or [tool] to open documentation"
   exit 0
 fi

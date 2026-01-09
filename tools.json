@@ -1,4 +1,17 @@
 {
   "git" : "https://git-scm.com/docs",
-  "local" : "http://localhost:8080"
+  "vim": "https://www.vim.org/docs.php",
+  "nano": "https://www.nano-editor.org/docs.php",
+  "htop": "https://htop.dev/",
+  "tmux": "https://github.com/tmux/tmux/wiki",
+  "docker": "https://docs.docker.com/",
+  "kubectl": "https://kubernetes.io/docs/reference/kubectl/overview/",
+  "ansible": "https://docs.ansible.com/ansible/latest/index.html",
+  "node": "https://nodejs.org/en/docs/",
+  "python": "https://docs.python.org/3/",
+  "nginx": "https://nginx.org/en/docs/",
+  "postgresql": "https://www.postgresql.org/docs/",
+  "redis": "https://redis.io/documentation",
+  "openssl": "https://www.openssl.org/docs/",
+  "jq": "https://stedolan.github.io/jq/manual/"
 }

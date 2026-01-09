@@ -1,31 +1,29 @@
 #!/bin/bash
-TOOLS="tools.json"
-ASCIIDUCK=$(cat duck-letter.txt)
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+TOOLS="$SCRIPT_DIR/tools.json"
+ASCIIDUCK_FILE="$SCRIPT_DIR/duck-letter.txt"
 
-if [[ -z "$1" ]];
-then 
-	echo "$ASCIIDUCK"
-	echo ""
-	echo ""
-	echo "Use --list to list all tools aviable or [tool] to open documentation"
-	exit 0	
+if [[ -z "$1" ]]; then
+  echo "$ASCIIDUCK"
+  echo ""
+  echo ""
+  echo "You need jq to use this tool. Please install jq first."
+  echo "Use --list to list all tools aviable or [tool] to open documentation"
+  exit 0
 fi
 
-if [[ "$1" == --list ]];
-then
-	echo "All tools:"
-	jq -r 'keys[]' "$TOOLS" | sed 's/^/    /'
-	exit 0
+if [[ "$1" == --list ]]; then
+  echo "All tools:"
+  jq -r 'keys[]' "$TOOLS" | sed 's/^/    /'
+  exit 0
 fi
 
-if jq -e --arg cmd "$1" '.[$cmd]' "$TOOLS" >/dev/null;
-then
-	URL=$(jq -r --arg cmd "$1" '.[$cmd]' "$TOOLS")
-	echo "Open Doc of $1"
-	xdg-open "$URL"
-	exit 0
+if jq -e --arg cmd "$1" '.[$cmd]' "$TOOLS" >/dev/null; then
+  URL=$(jq -r --arg cmd "$1" '.[$cmd]' "$TOOLS")
+  echo "Open Doc of $1"
+  xdg-open "$URL"
+  exit 0
 else
-	echo "Sorry :'( the $1 tool dont implemented yet. You can aport in https://github.com/docduck"
-	exit 1
+  echo "Sorry :'( the $1 tool dont implemented yet. You can aport in https://github.com/docduck"
+  exit 1
 fi
-

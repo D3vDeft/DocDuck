@@ -13,5 +13,6 @@
   "postgresql": "https://www.postgresql.org/docs/",
   "redis": "https://redis.io/documentation",
   "openssl": "https://www.openssl.org/docs/",
-  "jq": "https://stedolan.github.io/jq/manual/"
+  "jq": "https://stedolan.github.io/jq/manual/",
+  "exiftool" : "https://exiftool.org/"
 }

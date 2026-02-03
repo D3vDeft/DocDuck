@@ -27,6 +27,6 @@ if jq -e --arg cmd "$1" '.[$cmd]' "$TOOLS" >/dev/null; then
   xdg-open "$URL"
   exit 0
 else
-  echo "Sorry :'( the $1 tool dont implemented yet. You can aport in https://github.com/docduck"
+  echo "Sorry :'( the $1 tool dont implemented yet. You can aport in https://github.com/D3vDeft/DocDuck"
   exit 1
 fi

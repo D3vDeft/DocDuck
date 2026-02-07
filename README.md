@@ -28,7 +28,7 @@ Perfecta para **desarrolladores**, **administradores de sistemas** y cualquiera 
 - 📚 **Soporte para cientos de comandos**: git, docker, python, node, kubectl, y muchos más
 - 🔧 **Fácil de instalar**: Una línea de comando y listo
 - 🎯 **Intuitiva**: Sintaxis simple y directa
-- 🆓 **Código abierto**: Licencia GPL v3
+- 🆓 **Código abierto**: Licencia MPL v2.0
 
 ---
 

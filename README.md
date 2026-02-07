@@ -1,4 +1,4 @@
-# 🦆 DocDuck
+# 📖🦆 DocDuck
 
 <div align="center">
   
